@@ -1,56 +1,51 @@
-﻿/* スタイルの適用 */
+﻿ /* スタイルの適用 */
+/*共通*/
 @charset "UTF-8";
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-/* 追加 */
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+.logo {
+	width: 100px;
+	margin-top: 100px;
+  display: inline-block;
+  }
 
 header {
+  width: 100%;/*横幅*/
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  /*画像横幅*/
+  background-size: cover;
+  background-clip: content-box;
 }
 
 h1 {
-  margin: 10px;
+  margin: 10px; /* 修正:適切な値を設定 */
+  
+  display: inline-block;/*0927追加*/
 }
 
 h2 {
-  margin: 10px;
+  margin: 10px; /* 修正:適切な値を設定 */
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 20px;/* ボタン間のスペース */
   margin-top: 20px;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* ボタンを縦に配置する */
+  align-items: center; /* ボタンを中央に配置する */
 }
 
 .button {
   background-color: #caae58;
   color: #fff;
-  padding: 20px 40px;
+  padding: 20px 40px; /* パディングを大きく調整 */
   border: none;
   cursor: pointer;
-  font-size: 24px;
-  position: relative;
-  z-index: 1;
+  font-size: 24px; /* フォント大きく調整 */
+  position: relative; /* ボタンに対して相対位置指定 */
+  z-index: 1; /* ボタンを前面に表示 */
   text-align: center;
 }
 
@@ -58,35 +53,38 @@ h2 {
   background-color: #cab173;
 }
 
-/* 背景 */
+/*背景*/
 body {
-  background-size: cover;
-  background-image: url(../images/CorkBoard.jpg);
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+    background-size: cover;
+    background-color: #D2B48C;
+    /*background-image: url(../images/CorkBoard.jpg);*/
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 /* 追加 */
 .white {
   width: 50%;
-  height: auto;
-  position: relative;
+  height: auto; /* 適切な高さを指定 */
+  position: relative; /* 親要素に記入 */
   text-align: center;
   background-color: white;
-  display: inline-block;
+  display: inline-block; /* テキストに対してインラインブロック要素を使用 */
   padding: 10px 20px;
   border-radius: 5px;
-  margin-left: 380px;
-  margin-bottom: 50px;
+  margin-left:380px;
+  margin-bottom:50px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0;
+  padding: 0; 
+}*
 
 ul {
-  list-style: none;
+  list-style:none; 
 }
 
 div {
@@ -95,29 +93,44 @@ div {
 
 .header__flex {
   display: flex;
-  height: 60px;
+  height:60px; 
   align-items: center;
 }
-
 .header__flex nav {
   margin-left: auto;
 }
-
 .header__flex ul {
   display: flex;
 }
-
 .header__flex ul li {
   margin-left: 20px;
 }
 
-aside {
-  margin-right: auto;
+/*追加0927*/
+.center{ 
+  text-align: center
 }
-
-#main {
-  padding: 40px 20px;
+/*grobalnavi*/
+#global_navi {
+  width: 980px;
+  clear: both;
+  overflow: hidden;
+  margin: 16px auto;
 }
+  
+  #global_navi ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  
+  #global_navi ul li {
+  width: 300px;
+  float: left;
+  margin-right: 1px;
+  text-align: center;
+  
+  }
 
 #main {
   font-size: 15px;
@@ -128,42 +141,31 @@ aside {
   z-index: 1;
 }
 
-#global_navi {
-  width: 980px;
-  clear: both;
-  overflow: hidden;
-  margin: 16px auto;
-}
-
-#global_navi ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#global_navi ul li {
-  width: 300px;
-  float: left;
-  margin-right: 1px;
-  text-align: center;
-
-}
-
-#global_navi ul li.current a {
-  background-color: #b7a077;
-}
-
-#global_navi ul li a:hover {
-  background-color: #8c7a5b;
-}
-
 a {
   color: #ff0;
   text-decoration: underline;
 }
 
 
-/* sidebar.css */
+aside {
+  width:22%;
+}
+.content{
+  display: flex;
+  justify-content: space-between
+  margin-bottom 50px;
+}
+
+/*　フッター　*/
+footer {
+  background-color: #333; /* フッターの背景色をヘッダーと同じに設定 */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 100;
+}
+
 #sidebar {
   width: 300px;
   background-color: white;
@@ -200,19 +202,4 @@ a {
   background-color: #555;
   border-left: 5px solid #caae58;
 }
-/* 本文部分のスタイル */
-.content {
-  margin-left: auto; /* 左側の余白を自動調整 */
-  margin-right: auto; /* 右側の余白を自動調整 */
-  padding: 20px;
-  max-width: 1200px; /* 本文の最大幅を指定 */
-}
-footer {
-  background-color: #333; /* フッターの背景色をヘッダーと同じに設定 */
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
-}
+
